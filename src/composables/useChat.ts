@@ -84,28 +84,6 @@ export const useChat = () => {
       image: data.image,
       isLast: true,
     });
-
-    // const totalMessagesNotMine = messages.value.filter((m) => m.itsMine === false);
-
-    // if (totalMessagesNotMine.length === 0) {
-    //   messages.value.push({
-    //     id: new Date().getTime(),
-    //     itsMine: false,
-    //     message: data.answer,
-    //     image: data.image,
-    //     isLast: true,
-    //   });
-    // } else {
-    //   totalMessagesNotMine[totalMessagesNotMine.length - 1].isLast = false;
-
-    //   messages.value.push({
-    //     id: new Date().getTime(),
-    //     itsMine: false,
-    //     message: data.answer,
-    //     image: data.image,
-    //     isLast: true,
-    //   });
-    // }
   };
 
   return {

@@ -1,11 +1,14 @@
 <template>
   <!-- Example Message -->
   <div v-if="itsMine" class="flex justify-end">
-    <div class="bg-blue-200 text-black p-2 rounded-l-3xl rounded-t-3xl max-w-xs mr-2">
+    <div v-if="isLast" class="bg-blue-200 text-black p-2 rounded-l-3xl rounded-t-3xl max-w-xs mr-2">
       {{ message }}
     </div>
-    <div class="flex flex-col justify-end">
-      <div>
+    <div v-else class="bg-blue-200 text-black p-2 rounded-xl max-w-xs mr-2">
+      {{ message }}
+    </div>
+    <div v-if="isLast" class="flex flex-col justify-end animate-jump-in">
+      <div class="relative">
         <!-- <img
           v-if="avatar"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Richard_Husband%2C_NASA_photo_portrait_in_orange_suit.jpg/800px-Richard_Husband%2C_NASA_photo_portrait_in_orange_suit.jpg"
@@ -14,25 +17,29 @@
         /> -->
 
         <img
-          v-if="isLast"
           src="https://t3.ftcdn.net/jpg/03/53/11/00/360_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg"
           alt="Profile Picture"
           class="w-6 h-6 object-cover rounded-full"
         />
+        <span
+          class="bottom-0 left-3 absolute w-3 h-3 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"
+        ></span>
       </div>
     </div>
   </div>
 
   <!-- Example Received Message -->
   <div v-else class="flex">
-    <div class="flex flex-col justify-end mr-2">
-      <div>
+    <div v-if="isLast" class="flex flex-col justify-end mr-2 animate-jump-in">
+      <div class="relative">
         <img
-          v-if="isLast"
-          src="https://t3.ftcdn.net/jpg/03/53/11/00/360_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg"
+          src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ%3D"
           alt="Profile Picture"
           class="w-6 h-6 object-cover rounded-full"
         />
+        <span
+          class="bottom-0 left-3 absolute w-3 h-3 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"
+        ></span>
       </div>
     </div>
 

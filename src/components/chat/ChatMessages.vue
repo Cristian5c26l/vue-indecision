@@ -35,11 +35,11 @@ interface Props {
   isTyping: boolean;
 }
 
-const { messages } = defineProps<Props>();
+const props = defineProps<Props>();
 
 const chatRef = ref<HTMLDivElement | null>(null);
 
-watch(messages, () => {
+watch(props, () => {
   // funcion watch estará observando "messages". Cuando detecte que cambia propiedad messages, se ejecutará la funcion de flecha que hace que se haga el scroll hasta abajo. Es necesario que se ejecute despues de 100 milisegundos para que los mensajes (ChatBubbles) se hayan renderizado por completo para despues hacer el scrollTo
   // console.log('messages cambió');
   setTimeout(() => {
